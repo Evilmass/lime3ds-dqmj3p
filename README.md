@@ -11,7 +11,13 @@ This fork was inspired by Slashaim's fork of the old Citra code.
 
 -   [Slashaim's Citra Fork](https://github.com/Slashaim/citra-dqmj3pro?tab=readme-ov-file)
 
-To build this project, please refer to the detailed instructions provided in the following wiki:
+To build this project, clone the repo using the following script
+
+```sh
+git clone --recursive https://github.com/Lurpigi/lime3ds-dqmj3p
+```
+
+And refer to the detailed instructions provided in the following wiki:
 
 -   [Building from Source](https://github.com/azahar-emu/azahar/wiki/Building-From-Source)
 
