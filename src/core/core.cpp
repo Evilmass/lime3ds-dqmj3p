@@ -158,11 +158,7 @@ System::ResultStatus System::RunLoop(bool tight_loop) {
         if (cpu_core->GetTimer().GetTicks() < global_ticks) {
             s64 delay = global_ticks - cpu_core->GetTimer().GetTicks();
             running_core = cpu_core.get();
-            kernel->SetRunningCPU(running_core);
-            cpu_core->GetTimer().Advance();
-            cpu_core->PrepareReschedule();
-            kernel->GetThreadManager(cpu_core->GetID()).Reschedule();
-            cpu_core->GetTimer().SetNextSlice(delay);
+            cpu_core->GetTimer().Advance(delay);
             if (max_delay < delay) {
                 max_delay = delay;
                 current_core_to_execute = cpu_core.get();
@@ -228,6 +224,7 @@ System::ResultStatus System::RunLoop(bool tight_loop) {
             }
             max_slice = cpu_core->GetTimer().GetTicks() - start_ticks;
         }
+        timing->AddToGlobalTicks(max_slice);
     }
 
     if (GDBStub::IsServerEnabled()) {
