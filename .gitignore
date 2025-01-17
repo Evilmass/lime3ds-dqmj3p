@@ -55,3 +55,4 @@ VULKAN_SDK/
 
 *.b64
 *.jks
+*.keystore
