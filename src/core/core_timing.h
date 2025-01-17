@@ -192,7 +192,6 @@ public:
 
         void Advance(s64 max_slice_length = MAX_SLICE_LENGTH);
 
-
         void Idle();
 
         u64 GetTicks() const;
@@ -281,7 +280,6 @@ public:
     }
     void SetNextSlice(s64 max_slice_length = MAX_SLICE_LENGTH);
 
-
     /**
      * Updates the value of the cpu clock scaling to the new percentage.
      */
@@ -315,7 +313,7 @@ private:
     template <class Archive>
     void serialize(Archive& ar, const unsigned int file_version) {
         // event_types set during initialization of other things
-        ar& global_timer;
+        ar & global_timer;
         ar & timers;
         ar & current_timer;
         if (Archive::is_loading::value) {

@@ -52,3 +52,7 @@ repo/
 .ccache/
 node_modules/
 VULKAN_SDK/
+
+*.b64
+*.jks
+*.keystore
