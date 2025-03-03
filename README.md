@@ -1,3 +1,6 @@
+[![](https://img.shields.io/github/v/release/Lurpigi/lime3ds-dqmj3p?include_prereleases&label=Release)](https://github.com/Lurpigi/lime3ds-dqmj3p/releases/latest)
+[![](https://img.shields.io/github/downloads/Lurpigi/lime3ds-dqmj3p/total.svg)]()
+
 This is a fork of the source code of the final version of Lime3DS, utilizing the core timing prior to Citra nightly-1544, to enhance performance on Dragon Quest Monster Joker 3 Professional (performance may degrade on many other games).
 
 It is also beneficial if, for some reason, you cannot run nightly-1543 (for example, if you use an AMD GPU that no longer supports drivers compatible with nightly-1543).
