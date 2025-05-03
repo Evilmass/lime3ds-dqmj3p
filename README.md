@@ -1,5 +1,8 @@
 # Lime3DS DQMJ3P Performance Fork
 
+[![](https://img.shields.io/github/v/release/Lurpigi/lime3ds-dqmj3p?include_prereleases&label=Release)](https://github.com/Lurpigi/lime3ds-dqmj3p/releases/latest)
+[![](https://img.shields.io/github/downloads/Lurpigi/lime3ds-dqmj3p/total.svg)](https://github.com/Lurpigi/lime3ds-dqmj3p/releases)
+
 Lime3DS-DQMJ3P is a specialized fork of the final version of Lime3DS that restores core timing behavior from before Citra nightly-1544, significantly improving performance in Dragon Quest Monsters: Joker 3 Professional.
 
 > ⚠️ Performance may decrease in games other than DQMJ3P.
