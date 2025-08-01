@@ -33,7 +33,10 @@ class EmuWindow;
 namespace VideoCore {
 
 /// Measured on hardware to be 2240568 timer cycles or 4481136 ARM11 cycles
-constexpr u64 FRAME_TICKS = 4481136ull;
+// constexpr u64 FRAME_TICKS = 4481136ull;
+
+// 268MHz CPU clocks / 60Hz frames per second
+constexpr u64 FRAME_TICKS = static_cast<u64>(BASE_CLOCK_RATE_ARM11 / SCREEN_REFRESH_RATE);
 
 class GraphicsDebugger;
 class RendererBase;

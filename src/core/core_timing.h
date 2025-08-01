@@ -39,7 +39,9 @@ constexpr u64 MAX_VALUE_TO_MULTIPLY = std::numeric_limits<s64>::max() / BASE_CLO
 
 /// Refresh rate defined by ratio of ARM11 frequency to ARM11 ticks per frame
 /// (268,111,856) / (4,481,136) = 59.83122493939037Hz
-constexpr double SCREEN_REFRESH_RATE = BASE_CLOCK_RATE_ARM11 / static_cast<double>(4481136ull);
+// constexpr double SCREEN_REFRESH_RATE = BASE_CLOCK_RATE_ARM11 / static_cast<double>(4481136ull);
+
+constexpr double SCREEN_REFRESH_RATE = 60;
 
 constexpr s64 msToCycles(int ms) {
     // since ms is int there is no way to overflow
