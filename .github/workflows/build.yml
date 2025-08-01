@@ -27,7 +27,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        target: ["msvc", "msys2"]
+        target: ["msvc"]
     defaults:
       run:
         shell: ${{ (matrix.target == 'msys2' && 'msys2') || 'bash' }} {0}
@@ -50,27 +50,14 @@ jobs:
             ${{ runner.os }}-${{ matrix.target }}-
       - name: Set up MSVC
         uses: ilammy/msvc-dev-cmd@v1
-        if: ${{ matrix.target == 'msvc' }}
       - name: Install extra tools (MSVC)
         run: choco install ccache ninja wget
-        if: ${{ matrix.target == 'msvc' }}
       - name: Set up Vulkan SDK (MSVC)
         uses: humbletim/setup-vulkan-sdk@v1.2.1
-        if: ${{ matrix.target == 'msvc' }}
         with:
           vulkan-query-version: latest
           vulkan-components: SPIRV-Tools
           vulkan-use-cache: true
-      - name: Set up MSYS2
-        uses: msys2/setup-msys2@v2
-        if: ${{ matrix.target == 'msys2' }}
-        with:
-          msystem: clang64
-          update: true
-          install: git make p7zip
-          pacboy: >-
-            toolchain:p ccache:p cmake:p ninja:p spirv-tools:p
-            qt6-base:p qt6-multimedia:p qt6-multimedia-wmf:p qt6-tools:p qt6-translations:p
       - name: Install NSIS
         run: |
           Invoke-WebRequest https://deac-riga.dl.sourceforge.net/project/nsis/NSIS%203/3.10/nsis-3.10-setup.exe?viasf=1 -OutFile C:\WINDOWS\Temp\nsis-3.10-setup.exe
