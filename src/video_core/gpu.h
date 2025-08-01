@@ -36,6 +36,8 @@ namespace VideoCore {
 // constexpr u64 FRAME_TICKS = 4481136ull;
 
 // 268MHz CPU clocks / 60Hz frames per second
+constexpr u64 BASE_CLOCK_RATE_ARM11 = 268111856;
+constexpr double SCREEN_REFRESH_RATE = 60;
 constexpr u64 FRAME_TICKS = static_cast<u64>(BASE_CLOCK_RATE_ARM11 / SCREEN_REFRESH_RATE);
 
 class GraphicsDebugger;
